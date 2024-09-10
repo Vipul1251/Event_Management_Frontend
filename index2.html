@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+        }
+        .navbar {
+            background-color: #3e8ed0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .vendor-card {
+            width: 200px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .vendor-card h3 {
+            color: #3e8ed0;
+        }
+        .btn {
+            background-color: #3e8ed0;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #306ea0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button>Home</button>
+        <button>Vendor</button>
+        <button>Florist</button>
+        <button>Log Out</button>
+    </div>
+    <div class="container">
+        <div class="vendor-card">
+            <h3>Vendor 1</h3>
+            <p>Contact Details</p>
+            <button class="btn">Shop Item</button>
+        </div>
+        <div class="vendor-card">
+            <h3>Vendor 2</h3>
+            <p>Contact Details</p>
+            <button class="btn">Shop Item</button>
+        </div>
+        <div class="vendor-card">
+            <h3>Vendor 3</h3>
+            <p>Contact Details</p>
+            <button class="btn">Shop Item</button>
+        </div>
+        <div class="vendor-card">
+            <h3>Vendor 4</h3>
+            <p>Contact Details</p>
+            <button class="btn">Shop Item</button>
+        </div>
+    </div>
+</body>
+</html>

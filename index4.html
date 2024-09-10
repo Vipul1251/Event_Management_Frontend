@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+        }
+        .navbar {
+            background-color: #3e8ed0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #3e8ed0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #3e8ed0;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #306ea0;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button>Welcome, Vendor Name</button>
+        <button>Product Status</button>
+        <button>Request Item</button>
+        <button>View Product</button>
+        <button>Log Out</button>
+    </div>
+    
+    <div class="container">
+        <h2>Manage Products</h2>
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="Enter product name">
+        </div>
+        <div class="form-group">
+            <label for="productPrice">Product Price</label>
+            <input type="text" id="productPrice" placeholder="Enter product price">
+        </div>
+        <div class="form-group">
+            <label for="productImage">Product Image URL</label>
+            <input type="text" id="productImage" placeholder="Enter image URL">
+        </div>
+        <button class="btn" onclick="addProduct()">Add The Product</button>
+        
+        <h2>Product List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <!-- Dynamic product rows will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function addProduct() {
+            var productName = document.getElementById('productName').value;
+            var productPrice = document.getElementById('productPrice').value;
+            var productImage = document.getElementById('productImage').value;
+
+            var table = document.getElementById('productList');
+            var row = table.insertRow();
+            row.innerHTML = `
+                <td><img src="${productImage}" width="50"></td>
+                <td>${productName}</td>
+                <td>${productPrice}</td>
+                <td>
+                    <button onclick="deleteProduct(this)">Delete</button>
+                    <button onclick="updateProduct(this)">Update</button>
+                </td>
+            `;
+        }
+
+        function deleteProduct(btn) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+        function updateProduct(btn) {
+            alert('Update functionality will go here');
+        }
+    </script>
+</body>
+</html>
